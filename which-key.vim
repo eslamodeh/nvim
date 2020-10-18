@@ -7,7 +7,7 @@ nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 
 let g:which_key_map['w'] = {
       \ 'name' : '+windows' ,
-      \ 'w' : ['<C-W>w'     , 'other-window']          ,
+      \ 'n' : ['<C-W>w'     , 'other-window']          ,
       \ 'd' : ['<C-W>c'     , 'delete-window']         ,
       \ '-' : ['<C-W>s'     , 'split-window-below']    ,
       \ '|' : ['<C-W>v'     , 'split-window-right']    ,
@@ -22,8 +22,13 @@ let g:which_key_map['w'] = {
       \ 'K' : [':resize -5'  , 'expand-window-up']      ,
       \ '=' : ['<C-W>='     , 'balance-window']        ,
       \ 's' : ['<C-W>s'     , 'split-window-below']    ,
-      \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
+      \ 'v' : ['<C-W>v'     , 'split-window-beside']    ,
       \ '?' : ['Windows'    , 'fzf-window']            ,
       \ }
-
+let g:which_key_map['s'] = {
+      \ 'name': "Search",
+      \ 'f' : [':Files'    , 'Search files'],
+      \ 'w' : [':Rg', "Search word"],
+      \ 'd' : [':NERDTreeToggle', 'Toggle Root Directory']
+      \ }
 autocmd VimEnter * call which_key#register('<Space>', "g:which_key_map")
