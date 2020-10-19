@@ -27,8 +27,8 @@ let g:which_key_map['w'] = {
       \ }
 let g:which_key_map['s'] = {
       \ 'name': "Search",
-      \ 'f' : [':Ag'    , 'Search files'],
-      \ 'w' : [':Rg', "Search word"],
+      \ 'f' : [':GFiles'    , 'Search files'],
+      \ 'w' : [':Ag', "Search word"],
       \ 'd' : [':NERDTreeToggle', 'Toggle Root Directory']
       \ }
 autocmd VimEnter * call which_key#register('<Space>', "g:which_key_map")
