@@ -3,9 +3,9 @@ defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 brew install neovim;
 brew install rg;
 brew install fzf;
+brew install the_silver_searcher
 pip3 install --user pynvim;
 
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
-
-export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'

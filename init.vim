@@ -25,7 +25,10 @@ Plug 'airblade/vim-gitgutter'
 " custom settings
 set number relativenumber
 set nu rnu
-
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
 source $HOME/.config/nvim/which-key.vim
 source $HOME/.config/nvim/editor-config.vim
 call plug#end()

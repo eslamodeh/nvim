@@ -27,7 +27,7 @@ let g:which_key_map['w'] = {
       \ }
 let g:which_key_map['s'] = {
       \ 'name': "Search",
-      \ 'f' : [':Files'    , 'Search files'],
+      \ 'f' : [':GFiles'    , 'Search files'],
       \ 'w' : [':Rg', "Search word"],
       \ 'd' : [':NERDTreeToggle', 'Toggle Root Directory']
       \ }
