@@ -19,7 +19,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
 " Plug 'ryanoasis/vim-devicons' Icons without colours
 " Plug 'akinsho/nvim-bufferline.lua'
-
+Plug 'ap/vim-buftabline'
 " Git Diff
 Plug 'airblade/vim-gitgutter'
 " custom settings
@@ -31,4 +31,7 @@ noremap <Leader>Y "+y
 noremap <Leader>P "+p
 source $HOME/.config/nvim/which-key.vim
 source $HOME/.config/nvim/editor-config.vim
+set hidden
+nnoremap <C-l> :bnext<CR>
+nnoremap <C-h> :bprev<CR>
 call plug#end()
