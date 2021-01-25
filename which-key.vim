@@ -1,7 +1,7 @@
 Plug 'liuchengxu/vim-which-key'
 let g:which_key_map =  {}
 let g:mapleader = "\<Space>"
-let g:maplocalleader = ','
+" let g:maplocalleader = ','
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 
