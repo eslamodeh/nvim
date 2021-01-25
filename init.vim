@@ -13,8 +13,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'ericbn/vim-relativize'
 
 	" code suggestion
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 	Plug 'ap/vim-buftabline'
 	" Git Diff
 	Plug 'airblade/vim-gitgutter'
