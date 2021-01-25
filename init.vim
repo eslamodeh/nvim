@@ -19,7 +19,8 @@ call plug#begin('~/.vim/plugged')
 	" Git Diff
 	Plug 'airblade/vim-gitgutter'
 	source $HOME/.config/nvim/which-key.vim
-	" source $HOME/.config/nvim/editor-config.vim
+  " Theme
+  Plug 'mhartington/oceanic-next'
 call plug#end()
 
 
@@ -32,4 +33,16 @@ nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprev<CR>
 
 let g:EditorConfig_exec_path = './editorconfig'
-set background=dark
+
+" Theme purposes
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" Or if you have Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" Theme
+syntax enable
+colorscheme OceanicNext
