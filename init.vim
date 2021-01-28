@@ -22,6 +22,8 @@ call plug#begin('~/.vim/plugged')
 	source $HOME/.config/nvim/which-key.vim
   " Theme
   Plug 'mhartington/oceanic-next'
+  " Syntax checker
+  Plug 'dense-analysis/ale'
 call plug#end()
 
 
@@ -47,3 +49,6 @@ endif
 " Theme
 syntax enable
 colorscheme OceanicNext
+" ALE config
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
