@@ -52,3 +52,6 @@ colorscheme OceanicNext
 " ALE config
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
+
+" Copy to system clipboard by default
+set clipboard=unnamedplus
