@@ -55,3 +55,6 @@ let g:ale_sign_warning = '⚠️'
 
 " Copy to system clipboard by default
 set clipboard=unnamedplus
+
+" For RTL texts
+set arabicshape!
