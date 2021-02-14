@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 	" On-demand loading
 	Plug 'preservim/nerdcommenter'
 	Plug 'editorconfig/editorconfig-vim'
-	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+	Plug 'scrooloose/nerdtree'
 	Plug 'liuchengxu/vim-which-key'
 
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
