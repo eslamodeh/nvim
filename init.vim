@@ -37,6 +37,8 @@ nnoremap <C-h> :bprev<CR>
 
 let g:EditorConfig_exec_path = './editorconfig'
 
+set scrolloff=10
+
 " Theme purposes
 " For Neovim 0.1.3 and 0.1.4
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
