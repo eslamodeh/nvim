@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'mhartington/oceanic-next'
   " Syntax checker
   Plug 'dense-analysis/ale'
+  Plug 'luochen1990/rainbow'
 call plug#end()
 
 
@@ -60,3 +61,7 @@ set clipboard=unnamedplus
 
 " For RTL texts
 set arabicshape!
+
+" Rainbow config
+let g:rainbow_active = 1
+
