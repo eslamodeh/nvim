@@ -1,11 +1,22 @@
 defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 brew install neovim;
-brew install rg;
+
+brew install cmake python mono go nodejs; # for YCM
+echo '{
+   "libs": [
+     "browser",
+     "react"
+   ],
+   "plugins": {
+       "doc_comment": null,
+       "angular": {},
+       "node": {}
+   }
+ }' > ~/.tern-project;
+
 brew install fzf;
-brew install the_silver_searcher
 pip3 install --user pynvim;
-npm install -g typescript; # for ALE
 
 curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim;
@@ -13,4 +24,3 @@ curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --c
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
 cp .editorconfig ~/
-echo "bind-key C-Tab next-window; bind-key C-S-Tab previous-window;" > ~/.tmux.conf;

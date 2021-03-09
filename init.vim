@@ -13,9 +13,10 @@ call plug#begin('~/.vim/plugged')
 	Plug 'ericbn/vim-relativize'
 
 	" code suggestion
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 	Plug 'ap/vim-buftabline'
 	" Git Diff
 	Plug 'airblade/vim-gitgutter'
@@ -70,10 +71,6 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'ruby': ['rubocop'],
-\   'erb': ['prettier'],
-\   'javascript': ['prettier'],
-\   'typescript': ['prettier'],
-\   'css': ['prettier']
 \}
 
 " Copy to system clipboard by default
@@ -85,3 +82,5 @@ set arabicshape!
 " Rainbow config
 let g:rainbow_active = 1
 
+" YCM config
+" let g:ycm_key_list_stop_completion = ['<CR>']
