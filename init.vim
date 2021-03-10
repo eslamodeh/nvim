@@ -84,3 +84,5 @@ let g:rainbow_active = 1
 
 " YCM config
 " let g:ycm_key_list_stop_completion = ['<CR>']
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
