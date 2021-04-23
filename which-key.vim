@@ -27,7 +27,8 @@ let g:which_key_map['w'] = {
       \ }
 let g:which_key_map['s'] = {
       \ 'name': "Search",
-      \ 'f' : [':GFiles --cached --others'    , 'Search files'],
+      \ 'f' : [':GFiles --cached --others --exclude-standard'    , 'Search files exclude gitignore'],
+      \ 'a' : [':GFiles --cached --others'    , 'Search files'],
       \ 'w' : [':Ag', "Search word"],
       \ 'd' : [':NERDTreeFind', 'Toggle current file'],
       \ 't' : [':NERDTreeToggle', 'Toggle root directory']
