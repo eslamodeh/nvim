@@ -19,7 +19,9 @@ call plug#begin('~/.vim/plugged')
   " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 	Plug 'ap/vim-buftabline'
 	" Git Diff
-	Plug 'airblade/vim-gitgutter'
+	" Plug 'airblade/vim-gitgutter'
+	Plug 'tpope/vim-fugitive'
+	Plug 'vim-airline/vim-airline'
 	source $HOME/.config/nvim/which-key.vim
   " Theme
   Plug 'mhartington/oceanic-next'
@@ -81,6 +83,11 @@ set arabicshape!
 
 " Rainbow config
 let g:rainbow_active = 1
+" git config
+set diffopt+=vertical
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gs :G<CR>
 
 " YCM config
 " let g:ycm_key_list_stop_completion = ['<CR>']
