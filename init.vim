@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plugged')
   " Syntax checker
   Plug 'dense-analysis/ale'
   Plug 'luochen1990/rainbow'
+  Plug 'slim-template/vim-slim'
 call plug#end()
 
 
