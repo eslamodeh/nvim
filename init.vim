@@ -14,12 +14,13 @@ call plug#begin('~/.vim/plugged')
 
 	" code suggestion
   Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+  Plug 'kchmck/vim-coffee-script'
   " Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
   " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-	Plug 'ap/vim-buftabline'
+	" Plug 'ap/vim-buftabline'
 	" Git Diff
-	" Plug 'airblade/vim-gitgutter'
+  Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
 	Plug 'vim-airline/vim-airline'
 	source $HOME/.config/nvim/which-key.vim
