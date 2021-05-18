@@ -18,7 +18,7 @@ call plug#begin('~/.vim/plugged')
   " Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
   " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-	" Plug 'ap/vim-buftabline'
+  Plug 'ap/vim-buftabline'
 	" Git Diff
   Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
