@@ -95,3 +95,21 @@ nmap <leader>gs :G<CR>
 " let g:ycm_key_list_stop_completion = ['<CR>']
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" Vagrant and rspec (carwow specific)
+
+:function Test_file()
+:  if exists('$TMUX')
+:    call system('tmux split -h "wow \"bundle exec rspec ' . expand('%') . ' --format documentation; read\""')
+:  else
+:    exe "! wow bundle exec rspec " . expand("%")
+:  endif
+:endfunction
+
+:function Test_line()
+:  if exists('$TMUX')
+:    call system('tmux split -h "wow \"bundle exec rspec ' . expand('%') . ':' . line('.') . ' --format documentation; read\""')
+:  else
+:    exe "! wow bundle exec rspec " . expand("%") . ":" . line(".")
+:  endif
+:endfunction

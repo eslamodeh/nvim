@@ -25,6 +25,7 @@ let g:which_key_map['w'] = {
       \ 'v' : ['<C-W>v'     , 'split-window-beside']    ,
       \ '?' : ['Windows'    , 'fzf-window']            ,
       \ }
+
 let g:which_key_map['s'] = {
       \ 'name': "Search",
       \ 'f' : [':GFiles --cached --others --exclude-standard'    , 'Search files exclude gitignore'],
@@ -32,6 +33,12 @@ let g:which_key_map['s'] = {
       \ 'w' : [':Ag', "Search word"],
       \ 'd' : [':NERDTreeFind', 'Toggle current file'],
       \ 't' : [':NERDTreeToggle', 'Toggle root directory']
+      \ }
+
+let g:which_key_map['t'] = {
+      \ 'name': "Test",
+      \ 'f' : [':call Test_file()'    , 'Run all spec for this file'],
+      \ 'l' : [':call Test_line()'    , 'Run spec for current line'],
       \ }
 
 autocmd VimEnter * call which_key#register('<Space>', "g:which_key_map")
