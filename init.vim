@@ -97,6 +97,10 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Vagrant and rspec (carwow specific)
+set foldmethod=indent
+set foldnestmax=10
+" set nofoldenable
+set foldlevel=2
 
 :function Test_file()
 :  if exists('$TMUX')
