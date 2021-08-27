@@ -1,29 +1,30 @@
 call plug#begin('~/.vim/plugged')
-	" On-demand loading
-	Plug 'preservim/nerdcommenter'
-	Plug 'editorconfig/editorconfig-vim'
-	Plug 'scrooloose/nerdtree'
-	Plug 'liuchengxu/vim-which-key'
+  " On-demand loading
+  Plug 'preservim/nerdcommenter'
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'scrooloose/nerdtree'
+  Plug 'liuchengxu/vim-which-key'
 
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-	Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+  " Vim notifications
+  Plug 'rcarriga/nvim-notify'
+  Plug 'ericbn/vim-relativize'
 
-	Plug 'ericbn/vim-relativize'
-
-	" code suggestion
+  " code suggestion
   Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
   Plug 'kchmck/vim-coffee-script'
   " Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
   " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
   Plug 'ap/vim-buftabline'
-	" Git Diff
+  " Git Diff
   Plug 'airblade/vim-gitgutter'
-	Plug 'tpope/vim-fugitive'
-	Plug 'vim-airline/vim-airline'
-	source $HOME/.config/nvim/which-key.vim
+  Plug 'tpope/vim-fugitive'
+  Plug 'vim-airline/vim-airline'
+  source $HOME/.config/nvim/which-key.vim
   " Theme
   Plug 'mhartington/oceanic-next'
   " Syntax checker
@@ -32,6 +33,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'slim-template/vim-slim'
 call plug#end()
 
+lua require("notify").setup({ stages = "fade_in_slide_out", timeout = 1000 })
 
 " custom settings
 set number relativenumber
@@ -102,18 +104,34 @@ set foldnestmax=10
 " set nofoldenable
 set foldlevel=2
 
-:function Test_file()
-:  if exists('$TMUX')
-:    call system('tmux split -h "wow \"bundle exec rspec ' . expand('%') . ' --format documentation; read\""')
-:  else
-:    exe "! wow bundle exec rspec " . expand("%")
-:  endif
-:endfunction
+function Test_file()
+  let current_file = expand('%')
+  let file_name = split(current_file, "\\.")[0]
 
-:function Test_line()
-:  if exists('$TMUX')
-:    call system('tmux split -h "wow \"bundle exec rspec ' . expand('%') . ':' . line('.') . ' --format documentation; read\""')
-:  else
-:    exe "! wow bundle exec rspec " . expand("%") . ":" . line(".")
-:  endif
-:endfunction
+  if file_name !~ "_spec$"
+    lua require("notify")("Can't run tests for this file..", "error")
+    return
+  endif
+
+  if exists('$TMUX')
+    call system('tmux split -h "wow \"bundle exec rspec ' . current_file . ' --format documentation; read\""')
+  else
+    exe "! wow bundle exec rspec " . current_file
+  endif
+endfunction
+
+function Test_line()
+  let current_file = expand('%')
+  let file_name = split(current_file, "\\.")[0]
+
+  if file_name !~ "_spec$"
+    lua require("notify")("Can't run test for this line..", "error")
+    return
+  endif
+
+  if exists('$TMUX')
+    call system('tmux split -h "wow \"bundle exec rspec ' . current_file . ':' . line('.') . ' --format documentation; read\""')
+  else
+    exe "! wow bundle exec rspec " . current_file . ":" . line(".")
+  endif
+endfunction
