@@ -31,6 +31,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'dense-analysis/ale'
   Plug 'luochen1990/rainbow'
   Plug 'slim-template/vim-slim'
+  " ctags generator
+  Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 lua require("notify").setup({ stages = "fade_in_slide_out", timeout = 1000 })
