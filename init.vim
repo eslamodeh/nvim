@@ -24,7 +24,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
   Plug 'vim-airline/vim-airline'
-  source $HOME/.config/nvim/which-key.vim
+
   " Theme
   Plug 'mhartington/oceanic-next'
   " Syntax checker
@@ -33,6 +33,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'slim-template/vim-slim'
   " ctags generator
   Plug 'ludovicchabant/vim-gutentags'
+
+  source $HOME/.config/nvim/which-key.vim
+  source $HOME/.config/nvim/b-close.vim
 call plug#end()
 
 lua require("notify").setup({ stages = "fade_in_slide_out", timeout = 1000 })
