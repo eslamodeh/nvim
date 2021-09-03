@@ -111,9 +111,9 @@ set foldlevel=2
 
 function Test_file()
   let current_file = expand('%')
-  let file_name = split(current_file, "\\.")[0]
+  " let file_name = split(current_file, "\\.")[0]
 
-  if file_name !~ "_spec$"
+  if current_file !~ ".*_spec.rb"
     lua require("notify")("Can't run tests for this file..", "error")
     return
   endif
@@ -127,9 +127,9 @@ endfunction
 
 function Test_line()
   let current_file = expand('%')
-  let file_name = split(current_file, "\\.")[0]
+  " let file_name = split(current_file, "\\.")[0]
 
-  if file_name !~ "_spec$"
+  if current_file !~ ".*_spec.rb"
     lua require("notify")("Can't run test for this line..", "error")
     return
   endif
