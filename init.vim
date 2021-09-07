@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
 
   " code suggestion
   Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+  Plug 'tomlion/vim-solidity'
   Plug 'kchmck/vim-coffee-script'
   " Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
