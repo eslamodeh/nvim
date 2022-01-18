@@ -18,6 +18,7 @@ echo '{
 brew install fzf;
 pip3 install --user pynvim;
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags;
+npm install -g elm elm-test elm-oracle elm-format;
 
 curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim;

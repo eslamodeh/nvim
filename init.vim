@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
 
   " code suggestion
   Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+  Plug 'https://github.com/ElmCast/elm-vim'
   Plug 'tomlion/vim-solidity'
   Plug 'kchmck/vim-coffee-script'
   " Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -24,6 +25,7 @@ call plug#begin('~/.vim/plugged')
   " Git Diff
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-rhubarb'
   Plug 'vim-airline/vim-airline'
 
   " Theme
