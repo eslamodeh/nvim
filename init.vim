@@ -112,19 +112,32 @@ set foldnestmax=10
 " set nofoldenable
 set foldlevel=2
 
+function IsCarwowApp()
+  let absolute_path = expand('%:p')
+  if stridx(absolute_path, "carwow") == -1
+    return 0
+  else
+    return 1
+  endif
+endfunction
+
 function Test_file()
   let current_file = expand('%')
   " let file_name = split(current_file, "\\.")[0]
 
-  if current_file !~ ".*_spec.rb"
+  if current_file !~ "spec/.*.rb"
     lua require("notify")("Can't run tests for this file..", "error")
     return
   endif
 
   if exists('$TMUX')
-    call system('tmux split -h "wow \"bundle exec rspec ' . current_file . ' --format documentation; read\""')
+    if IsCarwowApp()
+      call system('tmux split -h "carwow run \"bundle exec rspec ' . current_file . ' --format documentation; read\""')
+    else
+      call system('tmux split -h "bundle exec rspec ' . current_file . ' --format documentation; read"')
+    endif
   else
-    exe "! wow bundle exec rspec " . current_file
+    exe "! carwow run bundle exec rspec " . current_file
   endif
 endfunction
 
@@ -132,14 +145,18 @@ function Test_line()
   let current_file = expand('%')
   " let file_name = split(current_file, "\\.")[0]
 
-  if current_file !~ ".*_spec.rb"
+  if current_file !~ "spec/.*.rb"
     lua require("notify")("Can't run test for this line..", "error")
     return
   endif
 
   if exists('$TMUX')
-    call system('tmux split -h "wow \"bundle exec rspec ' . current_file . ':' . line('.') . ' --format documentation; read\""')
+    if IsCarwowApp()
+      call system('tmux split -h "carwow run \"bundle exec rspec ' . current_file . ':' . line('.') . ' --format documentation; read\""')
+    else
+      call system('tmux split -h "bundle exec rspec ' . current_file . ':' . line('.') . ' --format documentation; read"')
+    endif
   else
-    exe "! wow bundle exec rspec " . current_file . ":" . line(".")
+    exe "! carwow run bundle exec rspec " . current_file . ":" . line(".")
   endif
 endfunction
