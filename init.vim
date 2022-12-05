@@ -41,7 +41,8 @@ call plug#begin('~/.vim/plugged')
   source $HOME/.config/nvim/b-close.vim
 call plug#end()
 
-lua require("notify").setup({ stages = "fade_in_slide_out", timeout = 1000 })
+" Not required to be manually loaded
+" lua require("notify").setup({ stages = "fade_in_slide_out", timeout = 1000 })
 
 " custom settings
 set number relativenumber
