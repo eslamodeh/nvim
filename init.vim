@@ -36,6 +36,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'slim-template/vim-slim'
   " ctags generator
   Plug 'ludovicchabant/vim-gutentags'
+  Plug 'dart-lang/dart-vim-plugin'
+  Plug 'hankchiutw/flutter-reload.vim'
 
   source $HOME/.config/nvim/which-key.vim
   source $HOME/.config/nvim/b-close.vim
