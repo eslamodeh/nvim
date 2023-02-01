@@ -14,10 +14,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'ericbn/vim-relativize'
 
   " code suggestion
-  Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
-  Plug 'https://github.com/ElmCast/elm-vim'
-  Plug 'tomlion/vim-solidity'
-  Plug 'kchmck/vim-coffee-script'
+  " Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+  " Plug 'https://github.com/ElmCast/elm-vim'
+  " Plug 'tomlion/vim-solidity'
+  " Plug 'kchmck/vim-coffee-script'
   " Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
   " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -109,20 +109,12 @@ nmap <leader>gs :G<CR>
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 
-" Vagrant and rspec (carwow specific)
+" Vagrant and rspec
 set foldmethod=indent
 set foldnestmax=10
 " set nofoldenable
 set foldlevel=2
 
-function IsCarwowApp()
-  let absolute_path = expand('%:p')
-  if stridx(absolute_path, "carwow") == -1
-    return 0
-  else
-    return 1
-  endif
-endfunction
 
 function Test_file()
   let current_file = expand('%')
@@ -134,13 +126,9 @@ function Test_file()
   endif
 
   if exists('$TMUX')
-    if IsCarwowApp()
-      call system('tmux split -h "carwow run \"bundle exec rspec ' . current_file . ' --format documentation; read\""')
-    else
-      call system('tmux split -h "bundle exec rspec ' . current_file . ' --format documentation; read"')
-    endif
+    call system('tmux split -h "bundle exec rspec ' . current_file . ' --format documentation; read"')
   else
-    exe "! carwow run bundle exec rspec " . current_file
+    exe "! bundle exec rspec " . current_file
   endif
 endfunction
 
@@ -154,12 +142,8 @@ function Test_line()
   endif
 
   if exists('$TMUX')
-    if IsCarwowApp()
-      call system('tmux split -h "carwow run \"bundle exec rspec ' . current_file . ':' . line('.') . ' --format documentation; read\""')
-    else
-      call system('tmux split -h "bundle exec rspec ' . current_file . ':' . line('.') . ' --format documentation; read"')
-    endif
+    call system('tmux split -h "bundle exec rspec ' . current_file . ':' . line('.') . ' --format documentation; read"')
   else
-    exe "! carwow run bundle exec rspec " . current_file . ":" . line(".")
+    exe "! bundle exec rspec " . current_file . ":" . line(".")
   endif
 endfunction
