@@ -14,7 +14,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'ericbn/vim-relativize'
 
   " code suggestion
-  " Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+  Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
   " Plug 'https://github.com/ElmCast/elm-vim'
   " Plug 'tomlion/vim-solidity'
   " Plug 'kchmck/vim-coffee-script'
