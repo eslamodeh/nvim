@@ -7,6 +7,7 @@ lua require('nvim-treesitter.configs').setup({ highlight={ enable=true } })
 set number relativenumber
 set nu rnu
 let NERDSpaceDelims=1
+let NERDTreeShowHidden=1
 set hidden
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprev<CR>
