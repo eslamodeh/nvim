@@ -6,7 +6,7 @@ lua require('nvim-treesitter.configs').setup({ highlight={ enable=true } })
 " custom settings
 set number relativenumber
 set nu rnu
-set list listchars=tab:>-,trail:.,extends:>,precedes:<,space:.
+set list listchars=tab:>-,trail:.,extends:>,precedes:<
 set hidden
 
 let NERDSpaceDelims=1
