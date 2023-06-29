@@ -42,13 +42,13 @@ let g:ale_linters_explicit = 1
 
 let g:ale_linters = {
 \   'ruby': ['rubocop'],
-\   'python': ['flake8'],
+\   'python': ['pylint'],
 \   'javascript': ['prettier'],
 \}
 
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['autopep8'],
+\   'python': ['black'],
 \   'ruby': ['rubocop'],
 \}
 
@@ -68,6 +68,8 @@ nmap <leader>gs :G<CR>
 
 " YCM config
 " let g:ycm_key_list_stop_completion = ['<CR>']
+inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "j"
+inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "k"
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 
