@@ -10,32 +10,26 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-  " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
   " Vim notifications
   Plug 'rcarriga/nvim-notify'
   Plug 'ericbn/vim-relativize'
 
   " LSP
-  Plug 'neovim/nvim-lspconfig'
+  " Plug 'neovim/nvim-lspconfig'
 
   " code suggestion
   Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
   Plug 'mhanberg/elixir.nvim'
-  " Plug 'https://github.com/ElmCast/elm-vim'
-  " Plug 'tomlion/vim-solidity'
-  " Plug 'kchmck/vim-coffee-script'
-  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-  " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
   Plug 'ap/vim-buftabline'
+
   " Git Diff
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
 
   " Theme
-  Plug 'mhartington/oceanic-next'
+  Plug 'folke/tokyonight.nvim'
   Plug 'vim-airline/vim-airline'
 
   " Syntax highlight
@@ -51,8 +45,7 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-lua require("elixir").setup()
 source $HOME/.config/nvim/default_config.vim
-source $HOME/.config/nvim/rspec.vim
+source $HOME/.config/nvim/testing.vim
 source $HOME/.config/nvim/which-key.vim
 source $HOME/.config/nvim/b-close.vim

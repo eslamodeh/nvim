@@ -1,16 +1,22 @@
-" Not required to be manually loaded
-" lua require("notify").setup({ stages = "fade_in_slide_out", timeout = 1000 })
 " To install highligher, use TSInstall lange -> EX: :TSInstall all
-lua require('nvim-treesitter.configs').setup({ highlight={ enable=true } })
 
-" custom settings
+" Custom settings
 set number relativenumber
 set nu rnu
 set list listchars=tab:>-,trail:.,extends:>,precedes:<
 set hidden
 
+" Theme
+colorscheme tokyonight-night
+
+" Lua requires
+lua require('nvim-treesitter/config')
+" lua require("elixir").setup()
+
+" Nerd tree config
 let NERDSpaceDelims=1
 let NERDTreeShowHidden=1
+
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprev<CR>
 
@@ -27,9 +33,6 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
-" Theme
-syntax enable
-colorscheme OceanicNext
 
 " ALE config
 let g:ale_sign_error = '❌'
