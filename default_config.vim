@@ -45,13 +45,13 @@ let g:ale_linters_explicit = 1
 
 let g:ale_linters = {
 \   'ruby': ['rubocop'],
-\   'python': ['pylint'],
+\   'python': ['ruff'],
 \   'javascript': ['prettier'],
 \}
 
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['black'],
+\   'python': ['ruff'],
 \   'ruby': ['rubocop'],
 \}
 
