@@ -5,6 +5,7 @@ set number relativenumber
 set nu rnu
 set list listchars=tab:>-,trail:.,extends:>,precedes:<
 set hidden
+set noincsearch
 
 " Theme
 colorscheme tokyonight-night
