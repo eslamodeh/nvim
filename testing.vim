@@ -36,7 +36,7 @@ function RspecTest(fileName)
 endfunction
 
 function PythonTest(fileName)
-  let absoluteCommand = printf("%s/entrypoint.sh python manage.py test; read", RepoAbsolutePath())
+  let absoluteCommand = printf("pytest %s; read", expand("%"))
 
   if exists('$TMUX')
     let command = printf("tmux split -h '%s'", absoluteCommand)
