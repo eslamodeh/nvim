@@ -43,6 +43,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'dart-lang/dart-vim-plugin'
   Plug 'hankchiutw/flutter-reload.vim'
 
+  " Find and replace / search
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 call plug#end()
 
 source $HOME/.config/nvim/default_config.vim

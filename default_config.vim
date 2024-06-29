@@ -12,6 +12,7 @@ colorscheme tokyonight-night
 
 " Lua requires
 lua require('nvim-treesitter/config')
+lua require('telescope_config')
 " lua require("elixir").setup()
 
 " Nerd tree config
@@ -72,8 +73,8 @@ nmap <leader>gs :G<CR>
 
 " YCM config
 " let g:ycm_key_list_stop_completion = ['<CR>']
-inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "j"
-inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "k"
+" inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "j"
+" inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "k"
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 
