@@ -45,6 +45,7 @@ call plug#begin('~/.vim/plugged')
 
   " Find and replace / search
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 call plug#end()
 
 source $HOME/.config/nvim/default_config.vim
