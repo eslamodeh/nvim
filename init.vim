@@ -21,7 +21,6 @@ call plug#begin('~/.vim/plugged')
   " code suggestion
   Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
   Plug 'mhanberg/elixir.nvim'
-  Plug 'ap/vim-buftabline'
 
   " Git Diff
   Plug 'airblade/vim-gitgutter'
@@ -31,13 +30,13 @@ call plug#begin('~/.vim/plugged')
   " Theme
   Plug 'folke/tokyonight.nvim'
   Plug 'vim-airline/vim-airline'
-
+  Plug 'vim-airline/vim-airline-themes'
   " Syntax highlight
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
   " Syntax checker
   Plug 'dense-analysis/ale'
-  Plug 'luochen1990/rainbow'
+  " Plug 'luochen1990/rainbow'
   " ctags generator
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'dart-lang/dart-vim-plugin'
