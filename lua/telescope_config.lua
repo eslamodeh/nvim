@@ -12,6 +12,9 @@ telescope.setup({
     }
   },
   defaults = {
+    path_display = {
+      "shorten"
+    },
     mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_next,
