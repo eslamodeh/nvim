@@ -49,12 +49,15 @@ let g:ale_linters = {
 \   'ruby': ['rubocop'],
 \   'python': ['ruff'],
 \   'javascript': ['prettier'],
+\   'vue': ['prettier'],
 \}
 
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['ruff'],
 \   'ruby': ['rubocop'],
+\   'javascript': ['prettier'],
+\   'vue': ['prettier']
 \}
 
 " Copy to system clipboard by default
