@@ -50,6 +50,8 @@ let g:ale_linters = {
 \   'python': ['ruff'],
 \   'javascript': ['prettier'],
 \   'vue': ['prettier'],
+\   'astro': ['prettier'],
+\   'sql': ['pgformatter'],
 \}
 
 let g:ale_fixers = {
@@ -57,7 +59,9 @@ let g:ale_fixers = {
 \   'python': ['ruff'],
 \   'ruby': ['rubocop'],
 \   'javascript': ['prettier'],
-\   'vue': ['prettier']
+\   'vue': ['prettier'],
+\   'astro': ['prettier'],
+\   'sql': ['pgformatter'],
 \}
 
 " Copy to system clipboard by default
