@@ -21,6 +21,7 @@ telescope.setup({
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-s>"] = actions.toggle_selection,
         ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+        ["<C-o>"] = function(p_bufnr) require("telescope.actions").send_selected_to_qflist(p_bufnr) vim.cmd.cfdo("edit") end,
         ["<CR>"] = actions.select_default
       },
     },
