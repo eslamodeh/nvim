@@ -50,6 +50,7 @@ let g:ale_linters = {
 \   'python': ['ruff'],
 \   'javascript': ['prettier'],
 \   'vue': ['prettier'],
+\   'json': ['prettier'],
 \   'astro': ['prettier'],
 \   'sql': ['pgformatter'],
 \}
@@ -60,6 +61,7 @@ let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \   'javascript': ['prettier'],
 \   'vue': ['prettier'],
+\   'json': ['prettier'],
 \   'astro': ['prettier'],
 \   'sql': ['pgformatter'],
 \}
