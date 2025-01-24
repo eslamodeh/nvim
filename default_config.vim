@@ -11,7 +11,7 @@ set noincsearch
 colorscheme tokyonight-night
 
 " Lua requires
-lua require('nvim-treesitter/config')
+lua require('nvim-treesitter.configs').setup {}
 lua require('telescope_config')
 " lua require("elixir").setup()
 
@@ -49,6 +49,7 @@ let g:ale_linters = {
 \   'ruby': ['rubocop'],
 \   'python': ['ruff'],
 \   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
 \   'vue': ['prettier'],
 \   'json': ['prettier'],
 \   'astro': ['prettier'],
@@ -60,6 +61,7 @@ let g:ale_fixers = {
 \   'python': ['ruff'],
 \   'ruby': ['rubocop'],
 \   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
 \   'vue': ['prettier'],
 \   'json': ['prettier'],
 \   'astro': ['prettier'],
