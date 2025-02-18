@@ -54,6 +54,7 @@ let g:ale_linters = {
 \   'json': ['prettier'],
 \   'astro': ['prettier'],
 \   'sql': ['pgformatter'],
+\   'terraform': ['terraform'],
 \}
 
 let g:ale_fixers = {
@@ -66,6 +67,7 @@ let g:ale_fixers = {
 \   'json': ['prettier'],
 \   'astro': ['prettier'],
 \   'sql': ['pgformatter'],
+\   'terraform': ['terraform'],
 \}
 
 " Copy to system clipboard by default
