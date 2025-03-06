@@ -45,6 +45,7 @@ let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_linters_explicit = 1
 
+let g:ale_ruby_rubocop_executable = 'bundle'
 let g:ale_linters = {
 \   'ruby': ['rubocop'],
 \   'python': ['ruff'],
