@@ -11,9 +11,7 @@ set noincsearch
 colorscheme tokyonight-night
 
 " Lua requires
-lua require('nvim-treesitter.configs').setup {}
-lua require('telescope_config')
-" lua require("elixir").setup()
+lua require('setup')
 
 " Nerd tree config
 let NERDSpaceDelims=1
@@ -21,6 +19,7 @@ let NERDTreeShowHidden=1
 
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprev<CR>
+nnoremap <silent> <leader>bd :bp\|bd #<CR>
 
 let g:EditorConfig_exec_path = './editorconfig'
 
@@ -71,6 +70,7 @@ let g:ale_fixers = {
 \   'terraform': ['terraform'],
 \}
 
+let g:ale_sql_pgformatter_options = '--keyword-case 2 --function-case 2 --type-case 2 --spaces 2 --wrap-limit 80 --wrap-after 1 --wrap-comment --keep-newline --no-extra-line --multiline --nogrouping --no-space-function'
 " Copy to system clipboard by default
 set clipboard=unnamedplus
 
@@ -102,3 +102,6 @@ set foldlevel=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'atomic'
 let g:airline_powerline_fonts = 1
+" Astro
+let g:astro_stylus = 'enable'
+let g:astro_typescript = 'enable'

@@ -7,7 +7,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'scrooloose/nerdtree'
   Plug 'liuchengxu/vim-which-key'
-
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 
@@ -36,6 +35,8 @@ call plug#begin('~/.vim/plugged')
 
   " Syntax checker
   Plug 'dense-analysis/ale'
+  Plug 'wuelnerdotexe/vim-astro'
+
   " Plug 'luochen1990/rainbow'
   " ctags generator
   Plug 'ludovicchabant/vim-gutentags'
@@ -50,9 +51,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'hashivim/vim-terraform'
   Plug 'vim-syntastic/syntastic'
   Plug 'juliosueiras/vim-terraform-completion'
+
+
+  " UI Enhancements
+  Plug 'MunifTanjim/nui.nvim'
+  Plug 'folke/noice.nvim'
 call plug#end()
 
 source $HOME/.config/nvim/default_config.vim
 source $HOME/.config/nvim/testing.vim
 source $HOME/.config/nvim/which-key.vim
-source $HOME/.config/nvim/b-close.vim
