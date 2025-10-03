@@ -52,10 +52,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-syntastic/syntastic'
   Plug 'juliosueiras/vim-terraform-completion'
 
-
-  " UI Enhancements
-  Plug 'MunifTanjim/nui.nvim'
-  Plug 'folke/noice.nvim'
+  Plug 'github/copilot.vim'
 call plug#end()
 
 source $HOME/.config/nvim/default_config.vim

@@ -9,6 +9,8 @@ set noincsearch
 
 " Theme
 colorscheme tokyonight-night
+highlight Comment guifg=#ff5555 ctermfg=Red
+highlight CopilotSuggestion guifg=#ffff55 ctermfg=Yellow
 
 " Lua requires
 lua require('setup')
