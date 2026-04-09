@@ -26,6 +26,9 @@ telescope.setup({
       },
     },
     preview = {
+      -- telescope 0.1.8 calls nvim-treesitter.parsers.ft_to_lang() which the
+      -- new nvim-treesitter `main` branch removed. Disable TS in previews.
+      treesitter = false,
       mime_hook = function(filepath, bufnr, opts)
         local is_image = function(filepath)
           local image_extensions = {'png','jpg'}   -- Supported image formats

@@ -53,6 +53,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'juliosueiras/vim-terraform-completion'
 
   Plug 'github/copilot.vim'
+
+  " Markdown preview
+  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 call plug#end()
 
 source $HOME/.config/nvim/default_config.vim

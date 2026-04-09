@@ -72,7 +72,19 @@ let g:ale_fixers = {
 \   'terraform': ['terraform'],
 \}
 
-let g:ale_sql_pgformatter_options = '--keyword-case 2 --function-case 2 --type-case 2 --spaces 2 --wrap-limit 80 --wrap-after 1 --wrap-comment --keep-newline --no-extra-line --multiline --nogrouping --no-space-function'
+let g:ale_sql_pgformatter_options =
+\ '--keyword-case 2 ' .
+\ '--function-case 2 ' .
+\ '--type-case 2 ' .
+\ '--spaces 2 ' .
+\ '--wrap-limit 80 ' .
+\ '--wrap-after 1 ' .
+\ '--wrap-comment ' .
+\ '--keep-newline ' .
+\ '--no-extra-line ' .
+\ '--multiline ' .
+\ '--no-space-function'
+
 " Copy to system clipboard by default
 set clipboard=unnamedplus
 
