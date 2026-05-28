@@ -41,14 +41,14 @@ brew install gh              # tpope/vim-rhubarb (GitHub integration)
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# --- Node toolchain (markdown-preview, copilot, prettier, YCM frontend) ---
-brew install node            # iamcco/markdown-preview.nvim, github/copilot.vim, prettier
-brew install yarn            # markdown-preview.nvim install hook
+# --- Node toolchain (copilot, prettier, YCM frontend) ---
+brew install node            # github/copilot.vim, prettier
 
-# --- Python (YCM, ruff) ---
+# --- Python (YCM, ruff, grip) ---
 brew install python          # ycm-core/YouCompleteMe build, ruff
 pip3 install --break-system-packages pynvim  # YCM / nvim python provider
 brew install ruff            # ALE python linter+fixer
+brew install grip            # <leader>fp markdown preview (GitHub-rendered)
 
 # --- Ruby (rubocop via bundler) ---
 # Assumes you manage Ruby separately (rbenv/asdf). rubocop is expected to come
@@ -71,18 +71,8 @@ fi
 # --- Optional: Dart/Flutter ---
 # brew install --cask flutter  # dart-lang/dart-vim-plugin, hankchiutw/flutter-reload.vim
 
-# --- Per-plugin post-install build steps ---
-# These run inside cloned plugin directories. Safe to re-run.
-
-# markdown-preview.nvim: needs node_modules in app/ (the prebuilt-binary
-# install hook isn't reliable on every system).
-MDP_APP="$HOME/.vim/plugged/markdown-preview.nvim/app"
-if [ -d "$MDP_APP" ] && [ ! -d "$MDP_APP/node_modules" ]; then
-  echo "==> Building markdown-preview.nvim"
-  (cd "$MDP_APP" && npx --yes yarn install)
-fi
-
 echo
 echo "==> Done. Next steps inside nvim:"
 echo "    :PlugInstall    \" if you haven't yet"
-echo "    :lua require('nvim-treesitter').install({'sql'})"
+echo "    :PlugClean      \" remove markdown-preview.nvim if previously installed"
+echo "    :lua require('nvim-treesitter').install({'sql', 'markdown', 'markdown_inline'})"

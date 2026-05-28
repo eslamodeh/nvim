@@ -54,8 +54,8 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'github/copilot.vim'
 
-  " Markdown preview
-  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+  " Markdown rendering (in-editor)
+  Plug 'MeanderingProgrammer/render-markdown.nvim'
 call plug#end()
 
 source $HOME/.config/nvim/default_config.vim

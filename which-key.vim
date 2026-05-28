@@ -21,7 +21,7 @@ let g:which_key_map['r'] = {
 
 function! FilePreview() abort
   if &filetype ==# 'markdown'
-    MarkdownPreview
+    call jobstart(['grip', expand('%'), '--browser'])
   else
     echo "No preview available for filetype: " . &filetype
   endif
