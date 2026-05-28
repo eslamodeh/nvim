@@ -26,7 +26,8 @@ nvim/
 │   ├── setup.lua         # requires every lua/plugins/*.lua
 │   └── plugins/
 │       ├── nvim-treesitter.lua
-│       └── telescope.lua
+│       ├── telescope.lua
+│       └── render-markdown.lua
 ├── scripts/
 │   └── install-deps.sh   # system + per-plugin build deps (idempotent)
 ├── CLAUDE.md             # this file

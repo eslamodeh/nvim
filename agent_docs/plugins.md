@@ -26,7 +26,7 @@ Grouped as they appear in `init.vim`. Each entry lists system dependencies (inst
 - `tpope/vim-rhubarb` — _Deps: `gh` (optional, for GitHub integration)_
 
 ## Syntax / linting
-- `nvim-treesitter/nvim-treesitter` — on the **`main`** branch (new API). Parsers installed via `require('nvim-treesitter').install({...})` in `lua/plugins/nvim-treesitter.lua`. Currently: `sql`. _Deps: `tree-sitter` CLI, C compiler (`xcode-select --install`)_
+- `nvim-treesitter/nvim-treesitter` — on the **`main`** branch (new API). Parsers installed via `require('nvim-treesitter').install({...})` in `lua/plugins/nvim-treesitter.lua`. Currently: `sql`, `markdown`, `markdown_inline`. _Deps: `tree-sitter` CLI, C compiler (`xcode-select --install`)_
 - `dense-analysis/ale` — linting/fixing. Heavy config block in `default_config.vim`. _Deps: see per-language fixers below_
   - ruby → `bundle exec rubocop` (per-project Gemfile)
   - python → `ruff`
@@ -53,11 +53,14 @@ Grouped as they appear in `init.vim`. Each entry lists system dependencies (inst
 - `github/copilot.vim` — _Deps: `node` (>=18), GitHub Copilot subscription, run `:Copilot setup`_
 
 ## Markdown
-- `iamcco/markdown-preview.nvim` — browser-based live preview. Install hook: `{ -> mkdp#util#install() }`. _Deps: `node`, `yarn`. Commands: `:MarkdownPreview`, `:MarkdownPreviewStop`._
+- `MeanderingProgrammer/render-markdown.nvim` — in-editor rendering of headings, code blocks, lists, links, etc. Always-on for `markdown` filetype. Setup in `lua/plugins/render-markdown.lua`. _Deps: `markdown` + `markdown_inline` treesitter parsers, a Nerd Font in the terminal (icons fall back to `?` boxes without one)._
+- **Browser preview** via `grip` (not an nvim plugin). `<leader>fp` in a `.md` buffer runs `grip <file> --browser` via `jobstart`, which boots a local server at `http://localhost:6419` rendering through GitHub's API. _Deps: `grip` (brew). Stop with `pkill grip`._
 
 ## Gotchas
 
-- **markdown-preview.nvim** needs its `app/bin/` binary downloaded. If `:MarkdownPreview` does nothing, `app/bin/` is missing — run `:call mkdp#util#install()` or `~/.vim/plugged/markdown-preview.nvim/app/install.sh` manually. Avoid the `'for':` lazy-load option, it's known to break the install hook.
+- **grip rate limit**: GitHub allows ~60 unauthenticated render calls/hour. For heavier use, add a token to `~/.grip/settings.py` (`USERNAME` + `PASSWORD = 'ghp_...'`) to lift it to 5000/hr. Pass `--user-content` to render fully offline.
+- **grip port reuse**: re-running `<leader>fp` while a previous grip is alive fails to bind port 6419 — kill the old one first.
+- **Nerd Font glyphs**: render-markdown icons (and airline powerline) need a Nerd Font in the terminal. iTerm2 profile in `dotfiles/.iterm2_profile.json` is set to `JetBrainsMonoNLNerdFont-Regular`; install via `brew install --cask font-jetbrains-mono-nerd-font`.
 - **YCM** is heavy and has a Python install step; needs Xcode CLT.
 - **telescope-fzf-native** needs `cmake` available on PATH.
 - **ALE rubocop** uses `bundle exec`, so it needs a Gemfile with rubocop in the project.

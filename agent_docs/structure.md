@@ -19,8 +19,9 @@
 | `testing.vim` | Test runner bindings |
 | `which-key.vim` | which-key leader bindings |
 | `lua/setup.lua` | Requires every `lua/plugins/*.lua` |
-| `lua/plugins/nvim-treesitter.lua` | Treesitter `ensure_installed` + highlight/indent |
+| `lua/plugins/nvim-treesitter.lua` | Treesitter parser installs + filetype highlight autocmd |
 | `lua/plugins/telescope.lua` | Telescope setup |
+| `lua/plugins/render-markdown.lua` | render-markdown.nvim setup (in-editor markdown rendering) |
 | `scripts/install-deps.sh` | Idempotent system + per-plugin build dep installer (macOS/brew) |
 
 ## Where things live
