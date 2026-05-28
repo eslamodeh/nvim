@@ -53,6 +53,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'juliosueiras/vim-terraform-completion'
 
   Plug 'github/copilot.vim'
+
+  " Markdown rendering (in-editor)
+  Plug 'MeanderingProgrammer/render-markdown.nvim'
 call plug#end()
 
 source $HOME/.config/nvim/default_config.vim

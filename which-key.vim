@@ -19,6 +19,19 @@ let g:which_key_map['r'] = {
       \ 'a' : [':Farr'    , 'Replace'],
       \ }
 
+function! FilePreview() abort
+  if &filetype ==# 'markdown'
+    call jobstart(['grip', expand('%'), '--browser'])
+  else
+    echo "No preview available for filetype: " . &filetype
+  endif
+endfunction
+
+let g:which_key_map['f'] = {
+      \ 'name': "File",
+      \ 'p' : [':call FilePreview()', 'Preview current file'],
+      \ }
+
 let g:which_key_map['t'] = {
       \ 'name': "Test",
       \ 'f' : [':call Test_file()'    , 'Run all spec for this file'],
