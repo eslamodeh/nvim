@@ -52,7 +52,7 @@ brew install terraform       # hashivim/vim-terraform + ALE terraform fixer
 brew install elixir          # mhanberg/elixir.nvim
 
 # --- Markdown preview (<leader>fp) ---
-brew install grip            # GitHub-rendered markdown at http://localhost:6419
+gh extension install yusukebe/gh-markdown-preview   # GitHub-rendered markdown at http://localhost:3333
 
 # --- Nerd Font (render-markdown glyphs + airline powerline) ---
 brew install --cask font-jetbrains-mono-nerd-font

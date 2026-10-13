@@ -21,7 +21,8 @@ let g:which_key_map['r'] = {
 
 function! FilePreview() abort
   if &filetype ==# 'markdown'
-    call jobstart(['grip', expand('%'), '--browser'])
+    call system('pkill -f gh-markdown-preview && sleep 0.3')
+    call jobstart(['gh', 'markdown-preview', expand('%')])
   else
     echo "No preview available for filetype: " . &filetype
   endif

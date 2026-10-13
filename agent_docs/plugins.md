@@ -54,12 +54,11 @@ Grouped as they appear in `init.vim`. Each entry lists system dependencies (inst
 
 ## Markdown
 - `MeanderingProgrammer/render-markdown.nvim` — in-editor rendering of headings, code blocks, lists, links, etc. Always-on for `markdown` filetype. Setup in `lua/plugins/render-markdown.lua`. _Deps: `markdown` + `markdown_inline` treesitter parsers, a Nerd Font in the terminal (icons fall back to `?` boxes without one)._
-- **Browser preview** via `grip` (not an nvim plugin). `<leader>fp` in a `.md` buffer runs `grip <file> --browser` via `jobstart`, which boots a local server at `http://localhost:6419` rendering through GitHub's API. _Deps: `grip` (brew). Stop with `pkill grip`._
+- **Browser preview** via `gh-markdown-preview` (a `gh` extension, not an nvim plugin). `<leader>fp` in a `.md` buffer runs `gh markdown-preview <file>` via `jobstart`, which boots a local server at `http://localhost:3333` (next free port if taken), opens the browser, and live-reloads on save. Renders through GitHub's API using `gh` auth. _Deps: `gh` (brew) + `gh extension install yusukebe/gh-markdown-preview`. Stop with `pkill -f gh-markdown-preview`._
 
 ## Gotchas
 
-- **grip rate limit**: GitHub allows ~60 unauthenticated render calls/hour. For heavier use, add a token to `~/.grip/settings.py` (`USERNAME` + `PASSWORD = 'ghp_...'`) to lift it to 5000/hr. Pass `--user-content` to render fully offline.
-- **grip port reuse**: re-running `<leader>fp` while a previous grip is alive fails to bind port 6419 — kill the old one first.
+- **Preview server reuse**: `<leader>fp` kills any running `gh-markdown-preview` first so servers don't pile up on 3333, 3334, ...
 - **Nerd Font glyphs**: render-markdown icons (and airline powerline) need a Nerd Font in the terminal. iTerm2 profile in `dotfiles/.iterm2_profile.json` is set to `JetBrainsMonoNLNerdFont-Regular`; install via `brew install --cask font-jetbrains-mono-nerd-font`.
 - **YCM** is heavy and has a Python install step; needs Xcode CLT.
 - **telescope-fzf-native** needs `cmake` available on PATH.
